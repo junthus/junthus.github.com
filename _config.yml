@@ -69,6 +69,6 @@ theme: maupassant
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
   type: git
-  repositort: https://github.com/junthus/junthus.github.com.git
-  branch: master
+  repo: https://github.com/junthus/junthus.github.com.git
+  branch: develop
   message: hexo deploy
