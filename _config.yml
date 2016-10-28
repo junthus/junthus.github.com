@@ -70,5 +70,5 @@ theme: maupassant
 deploy:
   type: git
   repo: https://github.com/junthus/junthus.github.com.git
-  branch: develop
+  branch: master
   message: hexo deploy
