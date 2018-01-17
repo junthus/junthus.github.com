@@ -277,7 +277,11 @@ div {
             margin: 1.4em 0 1.1em;
         }
         pre code {
-            padding: 0 2em;
+            padding: 1em 2em;
+
+            .line-numbers-rows {
+                padding: 1em 0;
+            }
         }
         p {
             margin: 0 0 1.234em;
@@ -1838,7 +1842,9 @@ pre:before,
 pre:after {
     box-shadow: none !important;
 }
-
 pre>code {
+    border:none !important;
+    box-shadow: 0px 0px 0px 1px #dfdfdf !important;
     border-radius: 5px;
+    font-size: 0.9em
 }
