@@ -1832,3 +1832,13 @@ em.search-keyword {
   font-style: normal;
   color: #01579f;
 }
+
+// prism coy theme: deactivate box shadow
+pre:before,
+pre:after {
+    box-shadow: none !important;
+}
+
+pre>code {
+    border-radius: 5px;
+}
