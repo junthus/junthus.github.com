@@ -56,7 +56,7 @@
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>html</span> <span class="token attr-name">lang</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>en<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>head</span><span class="token punctuation">></span></span>
   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">charset</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>utf-8<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
-  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>title</span><span class="token punctuation">></span></span>MyApp<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>title</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>title</span><span class="token punctuation">></span></span>Angular Hello World<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>title</span><span class="token punctuation">></span></span>
   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>base</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>/<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
 
   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>viewport<span class="token punctuation">"</span></span> <span class="token attr-name">content</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>width<span class="token punctuation">=</span>device-width, initial-scale<span class="token punctuation">=</span>1<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
@@ -120,7 +120,7 @@ Hello from {{what}}
 </tr>
 <tr>
 <td>bad</td>
-<td>ts + reactiveJS 까지 사실상 같이 봐야 함 + 지들만의 세상을 한참 공부하도록 시킴<br>손에 익기까지 오래걸리고 파일 갯수 무한 증식하며 디버깅이 무슨 암호해독처럼 느껴짐 = 유지보수 자신없음<br>장점만 발라내어 레거시에 붙이기 불가능 = 프레임워크 적용하려고 하면 mkdir 부터 시작해야함<br>되니가 좋아하기 때문에 시름.</td>
+<td>ts + reactiveJS 까지 사실상 같이 봐야 함 + 지들만의 세상을 한참 공부하도록 시킴<br>손에 익기까지 오래걸리고 파일 갯수 무한 증식하며 디버깅이 무슨 암호해독처럼 느껴짐 = 유지보수 자신없음<br>장점만 발라내어 레거시에 붙이기 불가능 = 프레임워크 적용하려고 하면 mkdir 부터 시작해야함<br><del>되니가 좋아하기 때문에 시름.</del></td>
 </tr>
 </tbody>
 </table>
@@ -177,16 +177,7 @@ Hello from {{what}}
 <p>다른 단일형 프레임워크와 달리 Vue는 점진적으로 채택할 수 있도록 설계하였습니다.</p>
 </blockquote>
 <p>뷰의 <strong>코어</strong>는 발음 그대로 뷰에만 관여 -&gt; 다른 라이브러리 생각 않고 레거시에 붙이기 가능하다니 포부 소박하고 쿨해…<br><a href="https://kr.vuejs.org/v2/guide/comparison.html" target="_blank" rel="noopener">매력발산</a> 열심이라 귀엽고 <a href="https://github.com/vuejs/awesome-vue#components--libraries" target="_blank" rel="noopener">공식 라이브러리도 많고</a>… 그리고 이 모든것보다 우선해서, <a href="https://kr.vuejs.org/v2/guide/" target="_blank" rel="noopener"><strong>문서가 쩔게 잘 되어 있다</strong></a>.</p>
-<h2 id="특징들-REACTIVE-DIRECTIVE-COMPONENT-IVE"><a href="#특징들-REACTIVE-DIRECTIVE-COMPONENT-IVE" class="headerlink" title="특징들 : REACTIVE, DIRECTIVE, COMPONENT-IVE"></a>특징들 : REACTIVE, DIRECTIVE, COMPONENT-IVE</h2><h3 id="1-‘선언적’-렌더링-데이터와-DOM은-REACTIVE"><a href="#1-‘선언적’-렌더링-데이터와-DOM은-REACTIVE" class="headerlink" title="1. ‘선언적’ 렌더링 - 데이터와 DOM은 REACTIVE"></a>1. ‘선언적’ 렌더링 - 데이터와 DOM은 REACTIVE</h3><ul>
-<li><a href="https://kr.vuejs.org/v2/guide/index.html#%EC%84%A0%EC%96%B8%EC%A0%81-%EB%A0%8C%EB%8D%94%EB%A7%81" target="_blank" rel="noopener">문서에 live 예제가 있음 멋짐</a></li>
-</ul>
-<h3 id="2-v-DIRECTIVE-렌더링된-돔에-특수한-반응형-동작을-지시함"><a href="#2-v-DIRECTIVE-렌더링된-돔에-특수한-반응형-동작을-지시함" class="headerlink" title="2. v- DIRECTIVE : 렌더링된 돔에 특수한 반응형 동작을 지시함"></a>2. v- DIRECTIVE : 렌더링된 돔에 특수한 반응형 동작을 지시함</h3><ul>
-<li><code>v-bind:(prop)</code></li>
-<li><code>v-if=(조건구문)</code>, <code>v-for=&quot;(반복구문)&quot;</code> - 텍스트, 속성 뿐 아니라 DOM 구조에도 데이터 바인딩 가능</li>
-<li><code>v-on:(eventName)</code> - 이벤트 리스너 선언 가능</li>
-<li><code>v-model=&quot;(prop)&quot;</code> - 양방향 바인딩 가능</li>
-</ul>
-<pre class="line-numbers language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>app<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+<h2 id="특징들-REACTIVE-DIRECTIVE-COMPONENT-IVE"><a href="#특징들-REACTIVE-DIRECTIVE-COMPONENT-IVE" class="headerlink" title="특징들 : REACTIVE, DIRECTIVE, COMPONENT-IVE"></a>특징들 : REACTIVE, DIRECTIVE, COMPONENT-IVE</h2><pre class="line-numbers language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>app<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>span</span> <span class="token attr-name"><span class="token namespace">v-bind:</span>title</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>message<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
     span.title attr에 app.message를 'keep' 바인딩
   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>span</span><span class="token punctuation">></span></span>
@@ -199,10 +190,16 @@ Hello from {{what}}
   <span class="token punctuation">}</span>
 <span class="token punctuation">}</span><span class="token punctuation">)</span>
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h3 id="3-COMPONENT-웹-컴포넌트-like-시스템"><a href="#3-COMPONENT-웹-컴포넌트-like-시스템" class="headerlink" title="3. COMPONENT - (웹) 컴포넌트 like 시스템"></a>3. COMPONENT - (웹) 컴포넌트 like 시스템</h3><blockquote>
-<p>컴포넌트는 미리 정의된 옵션을 가진 ‘확장된’ vue 인스턴스</p>
-</blockquote>
-<p>1.이런 뷰 인스턴스가 존재한다면 이것을 </p>
+<h3 id="1-‘선언적’-렌더링-데이터와-DOM은-REACTIVE"><a href="#1-‘선언적’-렌더링-데이터와-DOM은-REACTIVE" class="headerlink" title="1. ‘선언적’ 렌더링 - 데이터와 DOM은 REACTIVE"></a>1. ‘선언적’ 렌더링 - 데이터와 DOM은 REACTIVE</h3><ul>
+<li><a href="https://kr.vuejs.org/v2/guide/index.html#%EC%84%A0%EC%96%B8%EC%A0%81-%EB%A0%8C%EB%8D%94%EB%A7%81" target="_blank" rel="noopener">문서에 live 예제가 있음 멋짐</a></li>
+</ul>
+<h3 id="2-v-DIRECTIVE-렌더링된-돔에-특수한-반응형-동작을-지시함"><a href="#2-v-DIRECTIVE-렌더링된-돔에-특수한-반응형-동작을-지시함" class="headerlink" title="2. v- DIRECTIVE : 렌더링된 돔에 특수한 반응형 동작을 지시함"></a>2. v- DIRECTIVE : 렌더링된 돔에 특수한 반응형 동작을 지시함</h3><ul>
+<li><code>v-bind:(prop)</code></li>
+<li><code>v-if=(조건구문)</code>, <code>v-for=&quot;(반복구문)&quot;</code> - 텍스트, 속성 뿐 아니라 DOM 구조에도 데이터 바인딩 가능</li>
+<li><code>v-on:(eventName)</code> - 이벤트 리스너 선언 가능</li>
+<li><code>v-model=&quot;(prop)&quot;</code> - 양방향 바인딩 가능</li>
+</ul>
+<h3 id="3-COMPONENT"><a href="#3-COMPONENT" class="headerlink" title="3. COMPONENT"></a>3. COMPONENT</h3><p>1.이런 뷰 인스턴스가 존재한다면 이것의 데이터를</p>
 <pre class="line-numbers language-js"><code class="language-js"><span class="token keyword">var</span> component <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Vue</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
   el<span class="token punctuation">:</span> <span class="token string">'#app'</span><span class="token punctuation">,</span>
   data<span class="token punctuation">:</span> <span class="token punctuation">{</span>
@@ -214,18 +211,18 @@ Hello from {{what}}
   <span class="token punctuation">}</span>
 <span class="token punctuation">}</span><span class="token punctuation">)</span>
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p>2.이런 정의된 컴포넌트에 넣어서 </p>
+<p>2.이렇게 정의된 컴포넌트를 이용해서</p>
+<pre class="line-numbers language-js"><code class="language-js">Vue<span class="token punctuation">.</span><span class="token function">component</span><span class="token punctuation">(</span><span class="token string">'todo-item'</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>
+  props<span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token string">'todo'</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token comment" spellcheck="true">// todo 변수로 데이터 들어올거야</span>
+  template<span class="token punctuation">:</span> <span class="token string">'&lt;li>{{ todo.text }}&lt;/li>'</span> <span class="token comment" spellcheck="true">// 그럼 &lt;todo-item>&lt;/todo-item>을 이렇게 치환해</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 <ul>
 <li><code>props</code> option: 너와 나의 연결 고리<ul>
 <li>상위 영역에서 테이터를 전달할 키 = 부모 영역의 데이터를 자식 컴포넌트에 내려줄 수 있음</li>
 </ul>
 </li>
 </ul>
-<pre class="line-numbers language-js"><code class="language-js">Vue<span class="token punctuation">.</span><span class="token function">component</span><span class="token punctuation">(</span><span class="token string">'todo-item'</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>
-  props<span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token string">'todo'</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token comment" spellcheck="true">// todo 변수로 데이터 들어올거야</span>
-  template<span class="token punctuation">:</span> <span class="token string">'&lt;li>{{ todo.text }}&lt;/li>'</span> <span class="token comment" spellcheck="true">// 그럼 &lt;todo-item>&lt;/todo-item>을 이렇게 치환해</span>
-<span class="token punctuation">}</span><span class="token punctuation">)</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 <p>3.요렇게 렌더링 할 수 있다.</p>
 <pre class="line-numbers language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>app<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>ol</span><span class="token punctuation">></span></span>
@@ -236,16 +233,18 @@ Hello from {{what}}
   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>ol</span><span class="token punctuation">></span></span>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p>설명을 위해 순서를 바꿨지만 실제 코딩은 이것의 거의 역순으로. (<a href="https://kr.vuejs.org/v2/guide/index.html#%EC%BB%B4%ED%8F%AC%EB%84%8C%ED%8A%B8%EB%A5%BC-%EC%82%AC%EC%9A%A9%ED%95%9C-%EC%9E%91%EC%84%B1%EB%B0%A9%EB%B2%95" target="_blank" rel="noopener">공식문서 예제보기</a>)</p>
-<p><hr><hr><hr></p>
-<h1 id="vue-instance"><a href="#vue-instance" class="headerlink" title="vue instance"></a>vue instance</h1><p>일단 이렇게 루트 인스턴스를 만들어</p>
+<p>설명을 위해 순서를 바꿨지만 실제 코딩은 이것의 거의 역순으로. (<a href="https://kr.vuejs.org/v2/guide/index.html#%EC%BB%B4%ED%8F%AC%EB%84%8C%ED%8A%B8%EB%A5%BC-%EC%82%AC%EC%9A%A9%ED%95%9C-%EC%9E%91%EC%84%B1%EB%B0%A9%EB%B2%95" target="_blank" rel="noopener">본문 예제보기</a>)</p>
+<p><hr><hr></p>
+<h1 id="여기부터-Essentials"><a href="#여기부터-Essentials" class="headerlink" title="여기부터 Essentials"></a>여기부터 Essentials</h1><p>공식문서와 이곳을 뛰어다니며 설명하니 어지러움 주의</p>
+<p><hr><hr></p>
+<h1 id="vue-instance"><a href="#vue-instance" class="headerlink" title="vue instance"></a>vue instance</h1><p>일단 이렇게 루트 인스턴스를 만듬다</p>
 <pre class="line-numbers language-js"><code class="language-js"><span class="token keyword">var</span> vm <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Vue</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
   <span class="token comment" spellcheck="true">// 데이터, 템플릿, 마운트할 엘리먼트, 메소드, 라이프사이클 콜백 등의 옵션 props</span>
 <span class="token punctuation">}</span><span class="token punctuation">)</span>
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 <ul>
-<li>우리 <a href="https://magi82.github.io/images/2017-2-24-android-mvc-mvp-mvvm/mvvm.png" target="_blank" rel="noopener">mvvm</a> 조금 비슷한거 같으니 참고해</li>
-<li>컴포넌트들을 사용하다보면 이런 트리구조 어플리케이션을 만들 수 있어.<pre><code>Root Instance
+<li>우리 <a href="https://magi82.github.io/images/2017-2-24-android-mvc-mvp-mvvm/mvvm.png" target="_blank" rel="noopener">mvvm</a> 조금 비슷한거 같으니 알아두고…</li>
+<li>컴포넌트들을 사용하다보면 이런 트리구조 어플리케이션을 만들 수 있슴.<pre><code>Root Instance
 └─ TodoList
  ├─ TodoItem
  │  ├─ DeleteTodoButton
@@ -254,10 +253,10 @@ Hello from {{what}}
     ├─ ClearTodosButton
     └─ TodoListStatistics
 </code></pre></li>
-<li>일단은 뷰 컴포넌트도 뷰 인스턴스라는 것만 알고 넘어가자 (물론 루트 인스턴스 특화 옵션이 있긴 해)</li>
-<li>컴포넌트 시스템 나중에 또 얘기할거야.</li>
+<li>일단은 뷰 컴포넌트도 뷰 인스턴스라는 것만 알고 넘어가자 (물론 루트 인스턴스 특화 옵션이 있긴 함)</li>
+<li>컴포넌트 시스템 나중에 또 얘기할거니까 넘어가 넘어가</li>
 </ul>
-<h2 id="constructor-option-data"><a href="#constructor-option-data" class="headerlink" title="constructor option: data"></a>constructor option: <code>data</code></h2><p>생성자 내에서 <code>data</code> 옵션에 할당될 때, 오브젝트 내에 미리 정의된 property는 반응형. <a href="https://kr.vuejs.org/v2/guide/instance.html#%EC%86%8D%EC%84%B1%EA%B3%BC-%EB%A9%94%EC%86%8C%EB%93%9C" target="_blank" rel="noopener">공식문서 참고</a></p>
+<h2 id="constructor-option-data"><a href="#constructor-option-data" class="headerlink" title="constructor option: data"></a>constructor option: <code>data</code></h2><p>생성자 내에서 <code>data</code> 옵션에 할당될 때, 오브젝트 내에 미리 정의된 property는 반응형. <a href="https://kr.vuejs.org/v2/guide/instance.html#%EC%86%8D%EC%84%B1%EA%B3%BC-%EB%A9%94%EC%86%8C%EB%93%9C" target="_blank" rel="noopener">본문 참고</a></p>
 <ul>
 <li>그러니 나중에 필요한 prop은 초기값으로 미리 셋팅해야 하고</li>
 <li>이걸 굳이 막아야 하는 상황이라면 <code>Object.freeze()</code>를 사용하라구 ~ </li>
@@ -284,10 +283,11 @@ Hello from {{what}}
 </li>
 </ul>
 <p><hr><hr><hr></p>
-<h1 id="Computed-prop-getter-setter도-있음-Watch-기능"><a href="#Computed-prop-getter-setter도-있음-Watch-기능" class="headerlink" title="Computed prop getter(setter도 있음), Watch 기능"></a>Computed prop getter(setter도 있음), Watch 기능</h1><h2 id="constructor-options-computed-methods"><a href="#constructor-options-computed-methods" class="headerlink" title="constructor options: computed, methods"></a>constructor options: <code>computed</code>, <code>methods</code></h2><p>템플릿에 로직 넣지 말고 <code>computed</code> 쓰세여</p>
+<h1 id="Computed-prop-getter-setter도-있음-와-Watch-기능"><a href="#Computed-prop-getter-setter도-있음-와-Watch-기능" class="headerlink" title="Computed prop getter(setter도 있음)와 Watch 기능"></a>Computed prop getter(setter도 있음)와 Watch 기능</h1><p><a href="https://kr.vuejs.org/v2/guide/computed.html#%EA%B3%84%EC%82%B0%EB%90%9C-%EC%BA%90%EC%8B%B1-vs-%EB%A9%94%EC%86%8C%EB%93%9C" target="_blank" rel="noopener">본문</a></p>
+<h2 id="constructor-options-computed-methods"><a href="#constructor-options-computed-methods" class="headerlink" title="constructor options: computed, methods"></a>constructor options: <code>computed</code>, <code>methods</code></h2><p>템플릿에 로직 넣지 말고 <code>computed</code> 쓰세여</p>
 <ul>
 <li><code>computed</code>는 의존성 변경이 없는한 캐시됨<ul>
-<li>message 변수 값을 뒤집은 reversedMessage(computed값) 의 경우, message 값이 변하기 전까지 캐시됨</li>
+<li>message 변수 값을 뒤집은 reversedMessage(computed값) 의 경우, message 값이 변하기 전까지 캐싱 </li>
 </ul>
 </li>
 </ul>
@@ -299,9 +299,105 @@ Hello from {{what}}
 <ul>
 <li><code>vm.$watch</code></li>
 </ul>
-<p><a href="https://kr.vuejs.org/v2/guide/computed.html#%EA%B8%B0%EB%B3%B8-%EC%98%88%EC%A0%9C" target="_blank" rel="noopener">공식문서 참고</a></p>
 <p><hr><hr><hr></p>
-<h1 id="v-bind-클래스-스타일-디렉티브"><a href="#v-bind-클래스-스타일-디렉티브" class="headerlink" title="v-bind: 클래스, 스타일 디렉티브"></a><code>v-bind</code>: 클래스, 스타일 디렉티브</h1><p><hr><hr><hr></p>
+<h1 id="v-bind-클래스-스타일-디렉티브"><a href="#v-bind-클래스-스타일-디렉티브" class="headerlink" title="v-bind: 클래스, 스타일 디렉티브"></a><code>v-bind</code>: 클래스, 스타일 디렉티브</h1><p>이거 많이 쓸텐데… 문자열 처리를 각각 해주려면 귀찮겠죠 ? 매-직 제공해 드립니다.</p>
+<h2 id="클래스-바인딩"><a href="#클래스-바인딩" class="headerlink" title="클래스 바인딩"></a>클래스 바인딩</h2><ul>
+<li>객체 지원: <code>:class=&quot;{active: isActive}&quot;</code><ul>
+<li>바인딩 된 객체는 위처럼 인라인일 수도, <code>data</code> prop에 정의된 객체일수도, <code>computed</code> 객체일수도.</li>
+</ul>
+</li>
+<li>배열 지원: <code>:class=&quot;[activeClass, errorClass]&quot;</code></li>
+<li>혼용 지원: <code>:class=&quot;[{active: isActive}, errorClass]&quot;</code> = 삼항연산</li>
+</ul>
+<p>이 문법은 컴포넌트에도 동일하게 적용.<br>된다고 하는데 컴포넌트 아는게 없어서 설명을 못하고 넘어감…</p>
+<h2 id="스타일-바인딩"><a href="#스타일-바인딩" class="headerlink" title="스타일 바인딩"></a>스타일 바인딩</h2><ul>
+<li>객체 지원: <code>:style=&quot;{fontSize: fontSize + &#39;px&#39;}&quot;</code><ul>
+<li>속성 이름에 camelCase, <a href="http://wiki.c2.com/?KebabCase" target="_blank" rel="noopener">kebab-case</a> 둘 다 사용 가능</li>
+</ul>
+</li>
+<li>배열 지원: <code>:style=&quot;[baseStyles, overridingStyles]&quot;</code></li>
+<li>벤더 프리픽스 자동 (이라는데 재현을 못해봄)<ul>
+<li>추가 loader를 써야 하나 ?</li>
+</ul>
+</li>
+<li>폴백 시스템 제공: <code>:style=&quot;{ display: [&#39;-webkit-box&#39;, &#39;-ms-flexbox&#39;, &#39;flex&#39;] }&quot;</code></li>
+</ul>
+<p>의문 : 컴파일 시점에 브라우저 정보를 알고 있진 않을텐데, 그럼 뷰는 런타임에 이것저것 챙겨 보고 업데이트를 시키는건가 ?</p>
+<p><hr><hr><hr></p>
+<h1 id="조건부-렌더링"><a href="#조건부-렌더링" class="headerlink" title="조건부 렌더링"></a>조건부 렌더링</h1><p>뷰는 진짜 깨끗하단 느낌이 드는게 조건에 안 맞으면 아예 그리지를 않는다. (button.disable 처럼)</p>
+<p><a href="https://kr.vuejs.org/v2/guide/conditional.html" target="_blank" rel="noopener">본문</a></p>
+<ul>
+<li><code>v-if</code> <code>v-else</code> <code>v-else-if</code><ul>
+<li><code>&lt;template&gt;</code> - target block : 토글 그룹<ul>
+<li>가능한 한 렌더링을 줄이려고 하기 때문에 토글그룹끼리 겹치는 요소들이 다시 렌더링 되지 않는 문제가 생길 수 있음 - <code>key</code> attr 사용   </li>
+</ul>
+</li>
+<li>마크업에서 실제 노드를 조작</li>
+</ul>
+</li>
+<li><code>v-show</code>- display:none 추가/제거</li>
+</ul>
+<p><hr><hr><hr></p>
+<h1 id="리스트-렌더링"><a href="#리스트-렌더링" class="headerlink" title="리스트 렌더링"></a>리스트 렌더링</h1><h2 id="v-for"><a href="#v-for" class="headerlink" title="v-for"></a>v-for</h2><ul>
+<li><code>v-for=&quot;itm in array&quot;</code><ul>
+<li><code>v-for=&quot;(itm, idx) in array&quot;</code></li>
+<li><code>v-for=&quot;(val, key, idx) in obj&quot;</code> - 내부적으로 <code>Object.keys()</code> 사용</li>
+<li><code>in</code> = <code>of</code></li>
+</ul>
+</li>
+<li><code>v-bind:key</code><ul>
+<li>가능한 한 dom 을 건드리지 않으려고 하는 정책이기 때문에, 위의 조건부 렌더링에서 <code>key</code> attr 처럼 다시 렌더링(리스트의 경우엔 재정렬)해야 한다는 힌트를 제공해야 한다. 고유한 id를 사용하는 것이 일반적.</li>
+<li>이 구문은 vue가 노드를 식별하는 방법이기 때문에 <code>v-for</code>와 상관없는 다른 노드에서도 사용가능.</li>
+</ul>
+</li>
+<li><code>v-for=&quot;itm in 10&quot;</code></li>
+<li><code>&lt;template&gt;</code> - target block : 반복 그룹</li>
+</ul>
+<h2 id="priority-v-for-gt-v-if"><a href="#priority-v-for-gt-v-if" class="headerlink" title="priority: v-for &gt; v-if"></a>priority: v-for &gt; v-if</h2><pre class="line-numbers language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span> <span class="token attr-name">v-for</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>todo in todos<span class="token punctuation">"</span></span> <span class="token attr-name">v-if</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>!todo.isComplete<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+  {{ todo }}
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">></span></span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<p>설명이 어려워서 그렇지 누가봐도 for 구문을 돌면서 if 조건을 체크해서 렌더링 하라는 것 같게 생김. <del>멋져</del></p>
+<h2 id="리스트용-데이터들-바인딩-이런-구멍-조심하세요"><a href="#리스트용-데이터들-바인딩-이런-구멍-조심하세요" class="headerlink" title="리스트용 데이터들 바인딩 - 이런 구멍 조심하세요"></a>리스트용 데이터들 바인딩 - 이런 구멍 조심하세요</h2><h3 id="배열"><a href="#배열" class="headerlink" title="배열"></a>배열</h3><ul>
+<li>배열 데이터를 래핑하여 추적 가능하게 제공하는데요<ul>
+<li><code>push()</code> <code>pop()</code> <code>shift()</code> <code>unshift()</code> <code>splice()</code> <code>sort()</code> <code>reverse()</code></li>
+<li>래핑되지 않은 방법으로 수정하면 감지 모태…<ul>
+<li>래핑되지 않은 방법 == 배열에 인덱스로 접근해서 수정하거나 <code>length</code>를 변경하는 등</li>
+<li><code>Vue.set</code> 이나 <code>splice</code>를 활용하세요.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>non-mutating 하고 싶다면 - <code>filter()</code> <code>concat()</code> <code>slice()</code> 사용<ul>
+<li>그렇다고 기존 DOM을 다 버리고 렌더링 하지는 않으니 걱정ㄴㄴ</li>
+</ul>
+</li>
+</ul>
+<h3 id="객체"><a href="#객체" class="headerlink" title="객체"></a>객체</h3><ul>
+<li>vue instance 생성 시점에 선언이 안 되어 있었다면 바인딩도 안 되는데요</li>
+<li><code>Vue.set(obj, key, val)</code>으로 동적 추가 가능합니다.<ul>
+<li>== <code>vm.$set</code></li>
+</ul>
+</li>
+<li>혹은 기존의 obj를 확장해서 아래처럼 재할당 하시면 되여.</li>
+</ul>
+<pre class="line-numbers language-js"><code class="language-js"><span class="token keyword">this</span><span class="token punctuation">.</span>userProfile <span class="token operator">=</span> Object<span class="token punctuation">.</span><span class="token function">assign</span><span class="token punctuation">(</span><span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token keyword">this</span><span class="token punctuation">.</span>userProfile<span class="token punctuation">,</span> <span class="token punctuation">{</span>
+  age<span class="token punctuation">:</span> <span class="token number">27</span><span class="token punctuation">,</span>
+  favoriteColor<span class="token punctuation">:</span> <span class="token string">'Vue Green'</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="v-for와-컴포넌트-같이-쓸-수-있는데요"><a href="#v-for와-컴포넌트-같이-쓸-수-있는데요" class="headerlink" title="v-for와 컴포넌트 같이 쓸 수 있는데요"></a>v-for와 컴포넌트 같이 쓸 수 있는데요</h2><pre class="line-numbers language-html"><code class="language-html">&lt;my-component 
+  v-for="item in items" // 이 item 변수를 컴포넌트 영역..에 자동으로 주입하지는 않고
+  v-bind:item="item" // 이렇게 prop을 이용해서 명시적으로 넣어 주어야 해요.
+  v-bind:index="index"
+  :key="item.id" // 이것도 꼭 챙겨주세요 (v2.2~)
+><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>my-component</span><span class="token punctuation">></span></span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h1 id="끊으며"><a href="#끊으며" class="headerlink" title="끊으며"></a>끊으며</h1><p>여기까지 문서를 읽으며 한 세 번 정도 컴포넌트 부분 읽고 올까… 하는 지점이 있었는데<br>문서님이 모르면 일단 넘어가라고 용서해주셔가지그<br>결국 읽어보지 못하고 준비해가지그</p>
+<p>그래가지그여…</p>
+<p>다음 타자님께 컴포넌트 잘 부탁드리면서<br>Essentials &gt; 이벤트 핸들링 부터 시작하시면 된다는 토스.</p>
+<p>그리고 아직까지 .vue 포맷이나 개발 포맷이 언급되지 않아서<br>어떻게 소스(혹은 파일)를 구성해야 하는지 모르겠는데<br>언젠가 발표하실 분 화이팅 !</p>
+<p><hr><hr><hr></p>
 <h1 id="부록"><a href="#부록" class="headerlink" title="(부록)"></a>(부록)</h1><p>MVC MVP MVVM… 패턴은 왜 쓰냐에 대한 한문장 정리 맘에 들어서.</p>
 <blockquote>
 <p>화면에 보여주는 로직과 실제 데이터 처리 로직을 분리</p>
@@ -309,4 +405,4 @@ Hello from {{what}}
 <ul>
 <li><a href="https://magi82.github.io/android-mvc-mvp-mvvm/" target="_blank" rel="noopener">MVC, MVP, MVVM 비교</a></li>
 </ul>
-</div><script type="text/javascript" src="/js/share.js?v=0.0.0" async></script><a data-url="junthus.github.io/2018/01/hello-vue/" data-id="cjcj0pylt0004hp4abz6eihuc" class="article-share-link">공유하기</a><div class="tags"></div><div class="post-nav"><a href="/2016/11/hello-TypeScript/" class="next">Hello! TypeScript</a></div></div></div></div><div class="pure-u-1-4 hidden_mid_and_down"><div id="sidebar"><div class="widget"><form action="//www.google.com/search" method="get" accept-charset="utf-8" target="_blank" class="search-form"><input type="text" name="q" maxlength="20" placeholder="Search"/><input type="hidden" name="sitesearch" value="junthus.github.io"/></form></div><div class="widget"><div class="widget-title"><i class="fa fa-folder-o"> 카테고리</i></div><ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/JavaScript/">JavaScript</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/JavaScript/ES6/">ES6</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/JavaScript/TypeScript/">TypeScript</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/JavaScript/Vue-js/">Vue.js</a></li></ul></li></ul></div><div class="widget"><div class="widget-title"><i class="fa fa-star-o"> 태그</i></div><div class="tagcloud"></div></div><div class="widget"><div class="widget-title"><i class="fa fa-file-o"> 최근</i></div><ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2018/01/hello-vue/">Vue.js</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/11/hello-TypeScript/">Hello! TypeScript</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/11/destructuring/">destructuring</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/11/const/">const</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/11/let/">let</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/10/test/">test</a></li></ul></div></div></div><div class="pure-u-1 pure-u-md-3-4"><div id="footer">© <a href="/." rel="nofollow">.bak.</a> Powered by<a rel="nofollow" target="_blank" href="https://hexo.io"> Hexo.</a><a rel="nofollow" target="_blank" href="https://github.com/tufu9441/maupassant-hexo"> Theme</a> by<a rel="nofollow" target="_blank" href="https://github.com/pagecho"> Cho.</a></div></div></div><a id="rocket" href="#top" class="show"></a><script type="text/javascript" src="/js/totop.js?v=0.0.0" async></script><script type="text/javascript" src="//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.pack.js" async></script><script type="text/javascript" src="/js/fancybox.js?v=0.0.0" async></script><link rel="stylesheet" type="text/css" href="/css/jquery.fancybox.css?v=0.0.0"><script type="text/javascript" src="/js/codeblock-resizer.js?v=0.0.0"></script><script type="text/javascript" src="/js/smartresize.js?v=0.0.0"></script></div></body></html>
+</div><script type="text/javascript" src="/js/share.js?v=0.0.0" async></script><a data-url="junthus.github.io/2018/01/hello-vue/" data-id="cjck4yqiy0004234a28x1xkgu" class="article-share-link">공유하기</a><div class="tags"></div><div class="post-nav"><a href="/2016/11/hello-TypeScript/" class="next">Hello! TypeScript</a></div></div></div></div><div class="pure-u-1-4 hidden_mid_and_down"><div id="sidebar"><div class="widget"><form action="//www.google.com/search" method="get" accept-charset="utf-8" target="_blank" class="search-form"><input type="text" name="q" maxlength="20" placeholder="Search"/><input type="hidden" name="sitesearch" value="junthus.github.io"/></form></div><div class="widget"><div class="widget-title"><i class="fa fa-folder-o"> 카테고리</i></div><ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/JavaScript/">JavaScript</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/JavaScript/ES6/">ES6</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/JavaScript/TypeScript/">TypeScript</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/JavaScript/Vue-js/">Vue.js</a></li></ul></li></ul></div><div class="widget"><div class="widget-title"><i class="fa fa-star-o"> 태그</i></div><div class="tagcloud"></div></div><div class="widget"><div class="widget-title"><i class="fa fa-file-o"> 최근</i></div><ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2018/01/hello-vue/">Vue.js</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/11/hello-TypeScript/">Hello! TypeScript</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/11/destructuring/">destructuring</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/11/const/">const</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/11/let/">let</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/10/test/">test</a></li></ul></div></div></div><div class="pure-u-1 pure-u-md-3-4"><div id="footer">© <a href="/." rel="nofollow">.bak.</a> Powered by<a rel="nofollow" target="_blank" href="https://hexo.io"> Hexo.</a><a rel="nofollow" target="_blank" href="https://github.com/tufu9441/maupassant-hexo"> Theme</a> by<a rel="nofollow" target="_blank" href="https://github.com/pagecho"> Cho.</a></div></div></div><a id="rocket" href="#top" class="show"></a><script type="text/javascript" src="/js/totop.js?v=0.0.0" async></script><script type="text/javascript" src="//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.pack.js" async></script><script type="text/javascript" src="/js/fancybox.js?v=0.0.0" async></script><link rel="stylesheet" type="text/css" href="/css/jquery.fancybox.css?v=0.0.0"><script type="text/javascript" src="/js/codeblock-resizer.js?v=0.0.0"></script><script type="text/javascript" src="/js/smartresize.js?v=0.0.0"></script></div></body></html>
