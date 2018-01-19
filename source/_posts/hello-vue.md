@@ -206,8 +206,6 @@ var app = new Vue({
 **원본 데이터 변경 = 결과도 변경**
 이런 흐름으로 app을 개발할 수 있게 만들어 준다.
 
-~~잘 정리 한 건지 모르겠다~~
-
 ### 2. `v-` DIRECTIVE : 렌더링된 돔에 특수한 반응형 동작을 지시함
 * `v-bind:(prop)`
 * `v-if=(조건구문)`, `v-for="(반복구문)"` : 텍스트, 속성 뿐 아니라 DOM 구조에도 데이터 바인딩 가능
@@ -257,18 +255,18 @@ Vue.component('todo-item', {
 
 <hr><hr>
 # 여기부터 Essentials
-공식문서와 이곳을 뛰어다니며 설명하니 어지러움 주의
+공식문서와 이곳을 뛰어다니니 어지러움 주의
 <hr><hr>
 
 # vue 인스턴스에 관하여
-일단 이렇게 루트 인스턴스를 만듬다. 뷰 인스턴스는 app 내에 일반적으로 하나가 존재함다.
+일단 이렇게 인스턴스를 만듦. 뷰 인스턴스는 app 내에 일반적으로 하나(=루트인스턴스)가 존재.
 ```js
 var vm = new Vue({
   // 데이터, 템플릿, 마운트할 엘리먼트, 메소드, 라이프사이클 콜백 등의 옵션 props
 })
 ```
-* 뷰 컴포넌트도 뷰 인스턴스라는 것만 알고 넘어가자 (물론 루트 인스턴스 특화 옵션이 있긴 함)
-* 컴포넌트들을 사용하다보면 이런 트리구조 어플리케이션을 만들 수 있슴.
+* 뷰 컴포넌트도 결굴 뷰 인스턴스라는 것만 알고 넘어가자 (물론 루트 인스턴스 특화 옵션이 있긴 함)
+* 컴포넌트들을 사용하다보면 이런 트리구조 어플리케이션을 구성할 수 있음.
 ```
 Root Instance
 └─ TodoList
@@ -297,7 +295,7 @@ Root Instance
 ![vue_instance_methods](/images/vue_instance_methods.png)
 
 ## constructor options: instance lifecycle hooks 
-(이벤트가 아닌) 콜백으로 특정 타이밍의 동작을 수행 할 수 있음. (그림의 빨간 박스들)
+(이벤트가 아닌) 콜백으로 특정 타이밍에 추가동작을 넣을 수 있음. (그림의 빨간 박스들)
 ![vue instance lifecycle & hooks](/images/vue-lifecyclehooks.png) 
 
 * `beforeCreate` `created`
@@ -311,10 +309,11 @@ Root Instance
 
 # 템플릿 문법 
 
-Vue는 템플릿을 virtual DOM 렌더링 함수를 이용해서 컴파일.
+Vue는 템플릿을 virtual DOM 렌더링 함수를 이용해서 컴파일 함.
+= 모델과 화면의 중간에 가상화 레이어(virtual DOM)를 두고 실제 화면의 재 렌더링을 최소화
 
-* 내부 반응형 시스템을 이용하여 상태 변경을 추적하고 그 데이터를 기반으로 virtual DOM DIFF를 이용하여 최소한의 rendered DOM을 조작하도록 함.
-  * == 최소한의 rendered DOM 변경을 기본 정책으로 삼고 있음
+* 내부의 반응형 시스템을 이용하여 상태 변경을 추적하고
+그 데이터를 기반으로 virtual DOM DIFF를 이용하여 최소한의 rendered DOM을 조작하도록 동작함.
 
 ## 문법들
 * 문자열 및 표현식 = [\{ \{ mustache \} \}](https://mustache.github.io/)
@@ -343,17 +342,17 @@ Vue는 템플릿을 virtual DOM 렌더링 함수를 이용해서 컴파일.
 
 ## constructor options: `computed`, `methods`
 
-vue: `watch` 제공하긴 하는데 웬만한건 알아서 해 드릴게여~ (`data`)
+vue: `watch` 제공하긴 하는데 웬만한건 알아서 해 드릴게여~ 
 
-그런데 기존 표현식들을 이용해서 템플릿 내에 구구절절 쓸 수 있긴 하지만 지저분하지요 ?
+그런데 `data` options에 있는 원본 값들을 가지고
+템플릿에서 표현식으로 구구절절 값을 변경할 수 있긴 하지만 지저분하지요 ?
 -> 템플릿에 로직 넣지 말고 `computed` 옵션을 쓰세여
 
 * `computed`는 의존성 변경이 없는한 캐시됨
-  * message 변수 값을 뒤집은 reversedMessage(computed값) 의 경우, message 값이 변하기 전까지 캐싱 
-  * getter 의 `this.message`(원본데이터)의 참조를 저장, 변경시에 값 업데이트 = 캐싱이 가능하도록 함
+  * message 변수 값을 뒤집은 reversedMessage(computed값)의 경우, message 값이 변하기 전까지 캐싱
+  * 캐싱이 가능한 이유: `computed` 객체에 getter 정의 시 `this.message`(=원본데이터)의 참조를 저장, 원본 변경을 감지함
 
-혹시 캐싱을 원하지 않는 경우, `methods` 쓰고 표현식에서 호출하세여.
-* `methods`는 재 렌더링 타임 마다 호출됨.
+혹시 캐싱을 원하지 않는 경우, 재 렌더링 타임 마다 호출되는 `methods` 쓰고 표현식에서 호출하세여.
 
 <hr><hr><hr>
 
@@ -379,12 +378,13 @@ vue: `watch` 제공하긴 하는데 웬만한건 알아서 해 드릴게여~ (`d
   * 추가 loader를 써야 하나 ?
 * 폴백 시스템 제공: `:style="{ display: ['-webkit-box', '-ms-flexbox', 'flex'] }"`
 
-의문 : 컴파일 시점에 브라우저 정보를 알고 있진 않을텐데, 그럼 뷰는 런타임에 이것저것 챙겨 보고 업데이트를 시키는건가 ?
+Q: 컴파일 시점에 브라우저 정보를 알고 있진 않을텐데, 그럼 vue는 런타임에 이것저것 챙겨 보고 업데이트를 시키는건가 ?
+A: 아마도 ?
 
 <hr><hr><hr>
 # 조건부 렌더링
-뷰는 조건에 안 맞으면 아예 rendered DOM에 그리지를 않는다. 
-(`<button disable=false></button>`를 `<button></button>`으로 깨끗하게 렌더링 하는 것 처럼)
+vue는 조건에 안 맞으면 아예 rendered DOM에 그리지를 않는다. 
+(`<button disable=false></button>`를 `<button></button>`으로 깨끗하게 렌더링 하는 것 처럼, 굳이 필요없는 attr이나 노드는 아예 제거하는 정책)
 
 [예제를 보면 이해하기 쉬움](https://kr.vuejs.org/v2/guide/conditional.html#key%EB%A5%BC-%EC%9D%B4%EC%9A%A9%ED%95%9C-%EC%9E%AC%EC%82%AC%EC%9A%A9-%EA%B0%80%EB%8A%A5%ED%95%9C-%EC%97%98%EB%A6%AC%EB%A8%BC%ED%8A%B8-%EC%A0%9C%EC%96%B4): 개발자 도구 열어놓고 돔 변경되는 것 확인하기.
 
@@ -455,18 +455,12 @@ this.userProfile = Object.assign({}, this.userProfile, {
 ```
 
 # 끊으며
-여기까지 문서를 읽으며 한 세 번 정도 컴포넌트 부분 읽고 올까... 하는 지점이 있었는데
-문서님이 모르면 일단 넘어가라고 용서해주셔가지그
-결국 읽어보지 못하고 준비해가지그
-
-그래가지그여...
-
-다음 타자님께 컴포넌트 잘 부탁드리면서
-Essentials > 이벤트 핸들링 부터 시작하시면 된다는 토스.
+* 다음 시작점: Essentials > 이벤트 핸들링
+* 꼭 더 알아야 할 점: [Component](https://kr.vuejs.org/v2/guide/components.html)
 
 그리고 아직까지 .vue 포맷이나 개발 포맷이 언급되지 않아서 
 어떻게 소스(혹은 파일)를 구성해야 하는지 모르겠는데
-언젠가 발표하실 분 화이팅 !
+미래의 나 화이팅 !
 
 <hr><hr><hr>
 
