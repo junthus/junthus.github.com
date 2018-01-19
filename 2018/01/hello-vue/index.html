@@ -212,7 +212,6 @@ Hello from {{what}}
 <li>실패하면</li>
 </ul>
 <p>반응형은 마치 like excel 처럼, 그 중간 과정들을 생략하고<br><strong>원본 데이터 변경 = 결과도 변경</strong><br>이런 흐름으로 app을 개발할 수 있게 만들어 준다.</p>
-<p><del>잘 정리 한 건지 모르겠다</del></p>
 <h3 id="2-v-DIRECTIVE-렌더링된-돔에-특수한-반응형-동작을-지시함"><a href="#2-v-DIRECTIVE-렌더링된-돔에-특수한-반응형-동작을-지시함" class="headerlink" title="2. v- DIRECTIVE : 렌더링된 돔에 특수한 반응형 동작을 지시함"></a>2. <code>v-</code> DIRECTIVE : 렌더링된 돔에 특수한 반응형 동작을 지시함</h3><ul>
 <li><code>v-bind:(prop)</code></li>
 <li><code>v-if=(조건구문)</code>, <code>v-for=&quot;(반복구문)&quot;</code> : 텍스트, 속성 뿐 아니라 DOM 구조에도 데이터 바인딩 가능</li>
@@ -256,16 +255,16 @@ Hello from {{what}}
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>설명을 위해 순서를 바꿨지만 실제 코딩은 이것의 거의 역순으로. (<a href="https://kr.vuejs.org/v2/guide/index.html#%EC%BB%B4%ED%8F%AC%EB%84%8C%ED%8A%B8%EB%A5%BC-%EC%82%AC%EC%9A%A9%ED%95%9C-%EC%9E%91%EC%84%B1%EB%B0%A9%EB%B2%95" target="_blank" rel="noopener">본문 예제보기</a>)</p>
 <p><hr><hr></p>
-<h1 id="여기부터-Essentials"><a href="#여기부터-Essentials" class="headerlink" title="여기부터 Essentials"></a>여기부터 Essentials</h1><p>공식문서와 이곳을 뛰어다니며 설명하니 어지러움 주의</p>
+<h1 id="여기부터-Essentials"><a href="#여기부터-Essentials" class="headerlink" title="여기부터 Essentials"></a>여기부터 Essentials</h1><p>공식문서와 이곳을 뛰어다니니 어지러움 주의</p>
 <p><hr><hr></p>
-<h1 id="vue-인스턴스에-관하여"><a href="#vue-인스턴스에-관하여" class="headerlink" title="vue 인스턴스에 관하여"></a>vue 인스턴스에 관하여</h1><p>일단 이렇게 루트 인스턴스를 만듬다. 뷰 인스턴스는 app 내에 일반적으로 하나가 존재함다.</p>
+<h1 id="vue-인스턴스에-관하여"><a href="#vue-인스턴스에-관하여" class="headerlink" title="vue 인스턴스에 관하여"></a>vue 인스턴스에 관하여</h1><p>일단 이렇게 인스턴스를 만듦. 뷰 인스턴스는 app 내에 일반적으로 하나(=루트인스턴스)가 존재.</p>
 <pre class="line-numbers language-js"><code class="language-js"><span class="token keyword">var</span> vm <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Vue</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
   <span class="token comment" spellcheck="true">// 데이터, 템플릿, 마운트할 엘리먼트, 메소드, 라이프사이클 콜백 등의 옵션 props</span>
 <span class="token punctuation">}</span><span class="token punctuation">)</span>
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 <ul>
-<li>뷰 컴포넌트도 뷰 인스턴스라는 것만 알고 넘어가자 (물론 루트 인스턴스 특화 옵션이 있긴 함)</li>
-<li>컴포넌트들을 사용하다보면 이런 트리구조 어플리케이션을 만들 수 있슴.<pre><code>Root Instance
+<li>뷰 컴포넌트도 결굴 뷰 인스턴스라는 것만 알고 넘어가자 (물론 루트 인스턴스 특화 옵션이 있긴 함)</li>
+<li>컴포넌트들을 사용하다보면 이런 트리구조 어플리케이션을 구성할 수 있음.<pre><code>Root Instance
 └─ TodoList
  ├─ TodoItem
  │  ├─ DeleteTodoButton
@@ -286,7 +285,7 @@ Hello from {{what}}
 </ul>
 <p>(<a href="https://vuejs.org/js/vue.js" target="_blank" rel="noopener">혹-시 vue.js 구현 궁금하면</a> 열어서 <code>Object.defineProperty</code> 같은 것을 찾아보자.)</p>
 <h2 id="instance-methods-prefix로-제공"><a href="#instance-methods-prefix로-제공" class="headerlink" title="instance methods: $ prefix로 제공"></a>instance methods: <code>$</code> prefix로 제공</h2><p><code>vm.a = vm.$data.a</code> 이런 alias 정도임<br>잘 안씀 = 안 중요함 = 지나가 지나가<br><img src="/images/vue_instance_methods.png" alt="vue_instance_methods"></p>
-<h2 id="constructor-options-instance-lifecycle-hooks"><a href="#constructor-options-instance-lifecycle-hooks" class="headerlink" title="constructor options: instance lifecycle hooks"></a>constructor options: instance lifecycle hooks</h2><p>(이벤트가 아닌) 콜백으로 특정 타이밍의 동작을 수행 할 수 있음. (그림의 빨간 박스들)<br><img src="/images/vue-lifecyclehooks.png" alt="vue instance lifecycle &amp; hooks"> </p>
+<h2 id="constructor-options-instance-lifecycle-hooks"><a href="#constructor-options-instance-lifecycle-hooks" class="headerlink" title="constructor options: instance lifecycle hooks"></a>constructor options: instance lifecycle hooks</h2><p>(이벤트가 아닌) 콜백으로 특정 타이밍에 추가동작을 넣을 수 있음. (그림의 빨간 박스들)<br><img src="/images/vue-lifecyclehooks.png" alt="vue instance lifecycle &amp; hooks"> </p>
 <ul>
 <li><code>beforeCreate</code> <code>created</code></li>
 <li><code>beforeMount</code> <code>mounted</code></li>
@@ -296,12 +295,9 @@ Hello from {{what}}
 <li><code>errorCaptured</code></li>
 </ul>
 <p><hr><hr><hr></p>
-<h1 id="템플릿-문법"><a href="#템플릿-문법" class="headerlink" title="템플릿 문법"></a>템플릿 문법</h1><p>Vue는 템플릿을 virtual DOM 렌더링 함수를 이용해서 컴파일.</p>
+<h1 id="템플릿-문법"><a href="#템플릿-문법" class="headerlink" title="템플릿 문법"></a>템플릿 문법</h1><p>Vue는 템플릿을 virtual DOM 렌더링 함수를 이용해서 컴파일 함.<br>= 모델과 화면의 중간에 가상화 레이어(virtual DOM)를 두고 실제 화면의 재 렌더링을 최소화</p>
 <ul>
-<li>내부 반응형 시스템을 이용하여 상태 변경을 추적하고 그 데이터를 기반으로 virtual DOM DIFF를 이용하여 최소한의 rendered DOM을 조작하도록 함.<ul>
-<li>== 최소한의 rendered DOM 변경을 기본 정책으로 삼고 있음</li>
-</ul>
-</li>
+<li>내부의 반응형 시스템을 이용하여 상태 변경을 추적하고<br>그 데이터를 기반으로 virtual DOM DIFF를 이용하여 최소한의 rendered DOM을 조작하도록 동작함.</li>
 </ul>
 <h2 id="문법들"><a href="#문법들" class="headerlink" title="문법들"></a>문법들</h2><ul>
 <li>문자열 및 표현식 = <a href="https://mustache.github.io/" target="_blank" rel="noopener">{ { mustache } }</a></li>
@@ -329,19 +325,16 @@ Hello from {{what}}
 </li>
 <li>양방향바인딩 같은 데이터는 걸어둘만 함</li>
 </ul>
-<h2 id="constructor-options-computed-methods"><a href="#constructor-options-computed-methods" class="headerlink" title="constructor options: computed, methods"></a>constructor options: <code>computed</code>, <code>methods</code></h2><p>vue: <code>watch</code> 제공하긴 하는데 웬만한건 알아서 해 드릴게여~ (<code>data</code>)</p>
-<p>그런데 기존 표현식들을 이용해서 템플릿 내에 구구절절 쓸 수 있긴 하지만 지저분하지요 ?<br>-&gt; 템플릿에 로직 넣지 말고 <code>computed</code> 옵션을 쓰세여</p>
+<h2 id="constructor-options-computed-methods"><a href="#constructor-options-computed-methods" class="headerlink" title="constructor options: computed, methods"></a>constructor options: <code>computed</code>, <code>methods</code></h2><p>vue: <code>watch</code> 제공하긴 하는데 웬만한건 알아서 해 드릴게여~ </p>
+<p>그런데 <code>data</code> options에 있는 원본 값들을 가지고<br>템플릿에서 표현식으로 구구절절 값을 변경할 수 있긴 하지만 지저분하지요 ?<br>-&gt; 템플릿에 로직 넣지 말고 <code>computed</code> 옵션을 쓰세여</p>
 <ul>
 <li><code>computed</code>는 의존성 변경이 없는한 캐시됨<ul>
-<li>message 변수 값을 뒤집은 reversedMessage(computed값) 의 경우, message 값이 변하기 전까지 캐싱 </li>
-<li>getter 의 <code>this.message</code>(원본데이터)의 참조를 저장, 변경시에 값 업데이트 = 캐싱이 가능하도록 함</li>
+<li>message 변수 값을 뒤집은 reversedMessage(computed값)의 경우, message 값이 변하기 전까지 캐싱</li>
+<li>캐싱이 가능한 이유: <code>computed</code> 객체에 getter 정의 시 <code>this.message</code>(=원본데이터)의 참조를 저장, 원본 변경을 감지함</li>
 </ul>
 </li>
 </ul>
-<p>혹시 캐싱을 원하지 않는 경우, <code>methods</code> 쓰고 표현식에서 호출하세여.</p>
-<ul>
-<li><code>methods</code>는 재 렌더링 타임 마다 호출됨.</li>
-</ul>
+<p>혹시 캐싱을 원하지 않는 경우, 재 렌더링 타임 마다 호출되는 <code>methods</code> 쓰고 표현식에서 호출하세여.</p>
 <p><hr><hr><hr></p>
 <h1 id="v-bind-클래스-스타일-디렉티브"><a href="#v-bind-클래스-스타일-디렉티브" class="headerlink" title="v-bind: 클래스, 스타일 디렉티브"></a><code>v-bind</code>: 클래스, 스타일 디렉티브</h1><p>이거 많이 쓸텐데… 문자열 처리를 각각 해주려면 귀찮겠죠 ? 매-직 제공해 드립니다.</p>
 <p><a href="https://kr.vuejs.org/v2/guide/class-and-style.html" target="_blank" rel="noopener">이것도 본문이 더 이해하기 쉬움</a></p>
@@ -366,9 +359,9 @@ Hello from {{what}}
 </li>
 <li>폴백 시스템 제공: <code>:style=&quot;{ display: [&#39;-webkit-box&#39;, &#39;-ms-flexbox&#39;, &#39;flex&#39;] }&quot;</code></li>
 </ul>
-<p>의문 : 컴파일 시점에 브라우저 정보를 알고 있진 않을텐데, 그럼 뷰는 런타임에 이것저것 챙겨 보고 업데이트를 시키는건가 ?</p>
+<p>Q: 컴파일 시점에 브라우저 정보를 알고 있진 않을텐데, 그럼 vue는 런타임에 이것저것 챙겨 보고 업데이트를 시키는건가 ?<br>A: 아마도 ?</p>
 <p><hr><hr><hr></p>
-<h1 id="조건부-렌더링"><a href="#조건부-렌더링" class="headerlink" title="조건부 렌더링"></a>조건부 렌더링</h1><p>뷰는 조건에 안 맞으면 아예 rendered DOM에 그리지를 않는다.<br>(<code>&lt;button disable=false&gt;&lt;/button&gt;</code>를 <code>&lt;button&gt;&lt;/button&gt;</code>으로 깨끗하게 렌더링 하는 것 처럼)</p>
+<h1 id="조건부-렌더링"><a href="#조건부-렌더링" class="headerlink" title="조건부 렌더링"></a>조건부 렌더링</h1><p>vue는 조건에 안 맞으면 아예 rendered DOM에 그리지를 않는다.<br>(<code>&lt;button disable=false&gt;&lt;/button&gt;</code>를 <code>&lt;button&gt;&lt;/button&gt;</code>으로 깨끗하게 렌더링 하는 것 처럼, 굳이 필요없는 attr이나 노드는 아예 제거하는 정책)</p>
 <p><a href="https://kr.vuejs.org/v2/guide/conditional.html#key%EB%A5%BC-%EC%9D%B4%EC%9A%A9%ED%95%9C-%EC%9E%AC%EC%82%AC%EC%9A%A9-%EA%B0%80%EB%8A%A5%ED%95%9C-%EC%97%98%EB%A6%AC%EB%A8%BC%ED%8A%B8-%EC%A0%9C%EC%96%B4" target="_blank" rel="noopener">예제를 보면 이해하기 쉬움</a>: 개발자 도구 열어놓고 돔 변경되는 것 확인하기.</p>
 <ul>
 <li><code>v-if</code> <code>v-else</code> <code>v-else-if</code><ul>
@@ -443,13 +436,14 @@ Hello from {{what}}
   :key="item.id" // 이것도 꼭 챙겨주세요 (v2.2~)
 ><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>my-component</span><span class="token punctuation">></span></span>
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h1 id="끊으며"><a href="#끊으며" class="headerlink" title="끊으며"></a>끊으며</h1><p>여기까지 문서를 읽으며 한 세 번 정도 컴포넌트 부분 읽고 올까… 하는 지점이 있었는데<br>문서님이 모르면 일단 넘어가라고 용서해주셔가지그<br>결국 읽어보지 못하고 준비해가지그</p>
-<p>그래가지그여…</p>
-<p>다음 타자님께 컴포넌트 잘 부탁드리면서<br>Essentials &gt; 이벤트 핸들링 부터 시작하시면 된다는 토스.</p>
-<p>그리고 아직까지 .vue 포맷이나 개발 포맷이 언급되지 않아서<br>어떻게 소스(혹은 파일)를 구성해야 하는지 모르겠는데<br>언젠가 발표하실 분 화이팅 !</p>
+<h1 id="끊으며"><a href="#끊으며" class="headerlink" title="끊으며"></a>끊으며</h1><ul>
+<li>다음 시작점: Essentials &gt; 이벤트 핸들링</li>
+<li>꼭 더 알아야 할 점: <a href="https://kr.vuejs.org/v2/guide/components.html" target="_blank" rel="noopener">Component</a></li>
+</ul>
+<p>그리고 아직까지 .vue 포맷이나 개발 포맷이 언급되지 않아서<br>어떻게 소스(혹은 파일)를 구성해야 하는지 모르겠는데<br>미래의 나 화이팅 !</p>
 <p><hr><hr><hr></p>
 <h1 id="부록"><a href="#부록" class="headerlink" title="(부록)"></a>(부록)</h1><p><a href="https://magi82.github.io/android-mvc-mvp-mvvm/" target="_blank" rel="noopener">MVC, MVP, MVVM</a>…<br>구글링하다 ‘이런 패턴은 왜 쓰나’에 대한 한 문장 정리 맘에 들어서.</p>
 <blockquote>
 <p>화면에 보여주는 로직과 실제 데이터 처리 로직을 분리</p>
 </blockquote>
-</div><script type="text/javascript" src="/js/share.js?v=0.0.0" async></script><a data-url="junthus.github.io/2018/01/hello-vue/" data-id="cjckcdtxk0000h34acjhhfi42" class="article-share-link">공유하기</a><div class="tags"></div><div class="post-nav"><a href="/2016/11/hello-TypeScript/" class="next">Hello! TypeScript</a></div></div></div></div><div class="pure-u-1-4 hidden_mid_and_down"><div id="sidebar"><div class="widget"><form action="//www.google.com/search" method="get" accept-charset="utf-8" target="_blank" class="search-form"><input type="text" name="q" maxlength="20" placeholder="Search"/><input type="hidden" name="sitesearch" value="junthus.github.io"/></form></div><div class="widget"><div class="widget-title"><i class="fa fa-folder-o"> 카테고리</i></div><ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/JavaScript/">JavaScript</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/JavaScript/ES6/">ES6</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/JavaScript/TypeScript/">TypeScript</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/JavaScript/Vue-js/">Vue.js</a></li></ul></li></ul></div><div class="widget"><div class="widget-title"><i class="fa fa-star-o"> 태그</i></div><div class="tagcloud"></div></div><div class="widget"><div class="widget-title"><i class="fa fa-file-o"> 최근</i></div><ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2018/01/hello-vue/">Vue.js</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/11/hello-TypeScript/">Hello! TypeScript</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/11/destructuring/">destructuring</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/11/const/">const</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/11/let/">let</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/10/test/">test</a></li></ul></div></div></div><div class="pure-u-1 pure-u-md-3-4"><div id="footer">© <a href="/." rel="nofollow">.bak.</a> Powered by<a rel="nofollow" target="_blank" href="https://hexo.io"> Hexo.</a><a rel="nofollow" target="_blank" href="https://github.com/tufu9441/maupassant-hexo"> Theme</a> by<a rel="nofollow" target="_blank" href="https://github.com/pagecho"> Cho.</a></div></div></div><a id="rocket" href="#top" class="show"></a><script type="text/javascript" src="/js/totop.js?v=0.0.0" async></script><script type="text/javascript" src="//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.pack.js" async></script><script type="text/javascript" src="/js/fancybox.js?v=0.0.0" async></script><link rel="stylesheet" type="text/css" href="/css/jquery.fancybox.css?v=0.0.0"><script type="text/javascript" src="/js/codeblock-resizer.js?v=0.0.0"></script><script type="text/javascript" src="/js/smartresize.js?v=0.0.0"></script></div></body></html>
+</div><script type="text/javascript" src="/js/share.js?v=0.0.0" async></script><a data-url="junthus.github.io/2018/01/hello-vue/" data-id="cjclmn1hh0005xd4aga85jak3" class="article-share-link">공유하기</a><div class="tags"></div><div class="post-nav"><a href="/2016/11/hello-TypeScript/" class="next">Hello! TypeScript</a></div></div></div></div><div class="pure-u-1-4 hidden_mid_and_down"><div id="sidebar"><div class="widget"><form action="//www.google.com/search" method="get" accept-charset="utf-8" target="_blank" class="search-form"><input type="text" name="q" maxlength="20" placeholder="Search"/><input type="hidden" name="sitesearch" value="junthus.github.io"/></form></div><div class="widget"><div class="widget-title"><i class="fa fa-folder-o"> 카테고리</i></div><ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/JavaScript/">JavaScript</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/JavaScript/ES6/">ES6</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/JavaScript/TypeScript/">TypeScript</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/JavaScript/Vue-js/">Vue.js</a></li></ul></li></ul></div><div class="widget"><div class="widget-title"><i class="fa fa-star-o"> 태그</i></div><div class="tagcloud"></div></div><div class="widget"><div class="widget-title"><i class="fa fa-file-o"> 최근</i></div><ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2018/01/hello-vue/">Vue.js</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/11/hello-TypeScript/">Hello! TypeScript</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/11/destructuring/">destructuring</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/11/const/">const</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/11/let/">let</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/10/test/">test</a></li></ul></div></div></div><div class="pure-u-1 pure-u-md-3-4"><div id="footer">© <a href="/." rel="nofollow">.bak.</a> Powered by<a rel="nofollow" target="_blank" href="https://hexo.io"> Hexo.</a><a rel="nofollow" target="_blank" href="https://github.com/tufu9441/maupassant-hexo"> Theme</a> by<a rel="nofollow" target="_blank" href="https://github.com/pagecho"> Cho.</a></div></div></div><a id="rocket" href="#top" class="show"></a><script type="text/javascript" src="/js/totop.js?v=0.0.0" async></script><script type="text/javascript" src="//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.pack.js" async></script><script type="text/javascript" src="/js/fancybox.js?v=0.0.0" async></script><link rel="stylesheet" type="text/css" href="/css/jquery.fancybox.css?v=0.0.0"><script type="text/javascript" src="/js/codeblock-resizer.js?v=0.0.0"></script><script type="text/javascript" src="/js/smartresize.js?v=0.0.0"></script></div></body></html>
