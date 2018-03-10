@@ -1,0 +1,117 @@
+<!DOCTYPE html><html lang="ko"><head><meta http-equiv="content-type" content="text/html; charset=utf-8"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black-translucent" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="description"><title>centering_thing | .bak</title><link rel="stylesheet" type="text/css" href="//cdn.bootcss.com/normalize/4.2.0/normalize.min.css"><link rel="stylesheet" type="text/css" href="//cdn.bootcss.com/pure/0.6.0/pure-min.css"><link rel="stylesheet" type="text/css" href="//cdn.bootcss.com/pure/0.6.0/grids-responsive-min.css"><link rel="stylesheet" type="text/css" href="/css/style.css?v=0.0.0"><link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css"><script type="text/javascript" src="//cdn.bootcss.com/jquery/3.0.0/jquery.min.js"></script><link rel="Shortcut Icon" type="image/x-icon" href="/favicon.ico"><link rel="apple-touch-icon" href="/apple-touch-icon.png"><link rel="apple-touch-icon-precomposed" href="/apple-touch-icon.png"><link rel="stylesheet" href="/css/prism-coy.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head><body><div class="body_container"><div id="header"><div class="site-name"><h1 class="hidden">centering_thing</h1><a id="logo" href="/.">.bak</a><p class="description"></p></div><div id="nav-menu"><a href="/." class="current"><i class="fa fa-home"> 홈</i></a><a href="/archives/"><i class="fa fa-archive"> 아카이브</i></a></div></div><div id="layout" class="pure-g"><div class="pure-u-1 pure-u-md-3-4"><div class="content_container"><div class="post"><h1 class="post-title">centering_thing</h1><div class="post-meta">Mar 10, 2018<span> | </span><span class="category"><a href="/categories/css/">css</a></span><script src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js" async></script><span id="busuanzi_container_page_pv"> | <span id="busuanzi_value_page_pv"></span><span> Hits</span></span></div><div class="post-content"><p>중심잡다 뒈질것 같아서.</p>
+<ul>
+<li>원문 - <a href="https://www.w3.org/Style/Examples/007/center.en.html#hv3" target="_blank" rel="noopener">https://www.w3.org/Style/Examples/007/center.en.html#hv3</a></li>
+</ul>
+<p>아니 모 <code>absolute</code> 으로 하나하나 잡으면 뒈쟈나? <del>뒈지고싶나</del></p>
+<h2 id="CSS2-센터링"><a href="#CSS2-센터링" class="headerlink" title="CSS2 센터링"></a>CSS2 센터링</h2><h3 id="인라인-텍스트-수평-센터링"><a href="#인라인-텍스트-수평-센터링" class="headerlink" title="인라인 텍스트 수평 센터링"></a>인라인 텍스트 수평 센터링</h3><pre class="line-numbers language-css"><code class="language-css"><span class="token selector">P </span><span class="token punctuation">{</span> <span class="token property">text-align</span><span class="token punctuation">:</span> center <span class="token punctuation">}</span>
+<span class="token selector">H2 </span><span class="token punctuation">{</span> <span class="token property">text-align</span><span class="token punctuation">:</span> center <span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<h3 id="블록-텍스트-이미지-수평-센터링"><a href="#블록-텍스트-이미지-수평-센터링" class="headerlink" title="블록 텍스트, 이미지 수평 센터링"></a>블록 텍스트, 이미지 수평 센터링</h3><p>블록을 가운데에 두려면 margin:auto 쓰면 편한데 그럼 너비를 정해줘야…</p>
+<pre class="line-numbers language-css"><code class="language-css"><span class="token selector">P<span class="token class">.blocktext</span> </span><span class="token punctuation">{</span>
+    <span class="token property">margin-left</span><span class="token punctuation">:</span> auto<span class="token punctuation">;</span>
+    <span class="token property">margin-right</span><span class="token punctuation">:</span> auto<span class="token punctuation">;</span>
+    <span class="token property">width</span><span class="token punctuation">:</span> <span class="token number">8</span>em
+<span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>이미지도 마찬가지.</p>
+<pre class="line-numbers language-css"><code class="language-css"><span class="token selector">IMG<span class="token class">.displayed</span> </span><span class="token punctuation">{</span>
+    <span class="token property">display</span><span class="token punctuation">:</span> block<span class="token punctuation">;</span>
+    <span class="token property">margin-left</span><span class="token punctuation">:</span> auto<span class="token punctuation">;</span>
+    <span class="token property">margin-right</span><span class="token punctuation">:</span> auto 
+<span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="블록이나-이미지-수직-센터링"><a href="#블록이나-이미지-수직-센터링" class="headerlink" title="블록이나 이미지 수직 센터링"></a>블록이나 이미지 수직 센터링</h3><blockquote>
+<p>CSS level 2 doesn’t have a property for centering things vertically.</p>
+</blockquote>
+<p>딱 맞는 스펙은 없지만 <code>table-cell</code>의 스펙에 버티컬 센터링이 있기 때문에 빌려다 쓴다.</p>
+<pre class="line-numbers language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>DIV</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>container<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>P</span><span class="token punctuation">></span></span>This small paragraph... <span class="token comment" spellcheck="true">&lt;!-- 이것을 수직 센터링 하기 위해 --></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>DIV</span><span class="token punctuation">></span></span> <span class="token comment" spellcheck="true">&lt;!-- 바깥에 block element 를 하나 둔 다음 --></span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-css"><code class="language-css"><span class="token selector">DIV<span class="token class">.container</span> </span><span class="token punctuation">{</span>
+    <span class="token property">min-height</span><span class="token punctuation">:</span> <span class="token number">10</span>em<span class="token punctuation">;</span>
+    <span class="token property">display</span><span class="token punctuation">:</span> table-cell<span class="token punctuation">;</span> &lt;!-- 그것을 테이블쎌이라고 하는 짓을 하면 된다<span class="token number">.</span> -->
+    <span class="token property">vertical-align</span><span class="token punctuation">:</span> middle 
+<span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="CSS3-센터링"><a href="#CSS3-센터링" class="headerlink" title="CSS3 센터링"></a>CSS3 센터링</h2><h3 id="수직-센터링"><a href="#수직-센터링" class="headerlink" title="수직 센터링"></a>수직 센터링</h3><pre class="line-numbers language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span>container</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">></span></span>This paragraph…
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<p>이거 가지고.</p>
+<h4 id="transform"><a href="#transform" class="headerlink" title="transform"></a>transform</h4><pre class="line-numbers language-css"><code class="language-css"><span class="token selector">div<span class="token class">.container</span> </span><span class="token punctuation">{</span>
+   <span class="token property">height</span><span class="token punctuation">:</span> <span class="token number">10</span>em<span class="token punctuation">;</span>
+   <span class="token property">position</span><span class="token punctuation">:</span> relative <span class="token comment" spellcheck="true">/* 부모는 렐러티브 ~ */</span>
+<span class="token punctuation">}</span>              
+<span class="token selector">div<span class="token class">.container</span> p </span><span class="token punctuation">{</span>
+   <span class="token property">margin</span><span class="token punctuation">:</span> <span class="token number">0</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">/* 이건 원래 p의 마진 없애려고 */</span>
+   <span class="token property">position</span><span class="token punctuation">:</span> absolute<span class="token punctuation">;</span> <span class="token comment" spellcheck="true">/* 나는 앱솔루트 ~ */</span>
+   <span class="token property">top</span><span class="token punctuation">:</span> <span class="token number">50%</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">/* 부모 높이 반틈에 시작점 맞추고 */</span>                         
+   <span class="token property">transform</span><span class="token punctuation">:</span> <span class="token function">translate</span><span class="token punctuation">(</span><span class="token number">0</span>, -<span class="token number">50%</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true">/* 내 높이의 반틈만 -y */</span>
+<span class="token punctuation">}</span>   <span class="token comment" spellcheck="true">/* 4 */</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="flex"><a href="#flex" class="headerlink" title="flex"></a>flex</h4><pre class="line-numbers language-css"><code class="language-css"><span class="token selector">div<span class="token class">.container</span> </span><span class="token punctuation">{</span>
+  <span class="token property">height</span><span class="token punctuation">:</span> <span class="token number">10</span>em<span class="token punctuation">;</span>
+  <span class="token property">display</span><span class="token punctuation">:</span> flex<span class="token punctuation">;</span>
+  <span class="token property">align-items</span><span class="token punctuation">:</span> center <span class="token comment" spellcheck="true">/* 수평 정렬 */</span>
+<span class="token punctuation">}</span>
+<span class="token selector">div<span class="token class">.container</span> p </span><span class="token punctuation">{</span>
+  <span class="token property">margin</span><span class="token punctuation">:</span> <span class="token number">0</span> 
+<span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="수직-수평-센터링-한번에"><a href="#수직-수평-센터링-한번에" class="headerlink" title="수직 수평 센터링 한번에"></a>수직 수평 센터링 한번에</h3><pre class="line-numbers language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span>container4</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">></span></span>Centered!
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<p>이거 가지고.</p>
+<h4 id="transform-1"><a href="#transform-1" class="headerlink" title="transform"></a>transform</h4><pre class="line-numbers language-css"><code class="language-css"><span class="token selector">div<span class="token class">.container4</span> </span><span class="token punctuation">{</span>
+    <span class="token property">height</span><span class="token punctuation">:</span> <span class="token number">10</span>em<span class="token punctuation">;</span>
+    <span class="token property">position</span><span class="token punctuation">:</span> relative 
+<span class="token punctuation">}</span>
+<span class="token selector">div<span class="token class">.container4</span> p </span><span class="token punctuation">{</span>
+    <span class="token property">margin</span><span class="token punctuation">:</span> <span class="token number">0</span><span class="token punctuation">;</span>
+    <span class="token property">background</span><span class="token punctuation">:</span> yellow<span class="token punctuation">;</span>
+    <span class="token property">position</span><span class="token punctuation">:</span> absolute<span class="token punctuation">;</span>
+    <span class="token property">top</span><span class="token punctuation">:</span> <span class="token number">50%</span><span class="token punctuation">;</span>
+    <span class="token property">left</span><span class="token punctuation">:</span> <span class="token number">50%</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">/* 부모 너미 반틈에 시작점 맞추고 */</span>
+    <span class="token property">transform</span><span class="token punctuation">:</span> <span class="token function">translate</span><span class="token punctuation">(</span>-<span class="token number">50%</span>, -<span class="token number">50%</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true">/* 내 높이의 반틈만 -x, -y */</span>
+<span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="flex-1"><a href="#flex-1" class="headerlink" title="flex"></a>flex</h4><pre class="line-numbers language-css"><code class="language-css"><span class="token selector">div<span class="token class">.container6</span> </span><span class="token punctuation">{</span>
+  <span class="token property">height</span><span class="token punctuation">:</span> <span class="token number">10</span>em<span class="token punctuation">;</span>
+  <span class="token property">display</span><span class="token punctuation">:</span> flex<span class="token punctuation">;</span>
+  <span class="token property">align-items</span><span class="token punctuation">:</span> center<span class="token punctuation">;</span>
+  <span class="token property">justify-content</span><span class="token punctuation">:</span> center <span class="token comment" spellcheck="true">/* 수직 정렬 */</span>
+<span class="token punctuation">}</span>
+<span class="token selector">div<span class="token class">.container6</span> p </span><span class="token punctuation">{</span>
+  <span class="token property">margin</span><span class="token punctuation">:</span> <span class="token number">0</span> 
+<span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="뷰포트-센터링"><a href="#뷰포트-센터링" class="headerlink" title="뷰포트 센터링"></a>뷰포트 센터링</h3><pre class="line-numbers language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>html</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>style</span><span class="token punctuation">></span></span><span class="token style language-css">
+        <span class="token selector">body </span><span class="token punctuation">{</span>
+            <span class="token property">background</span><span class="token punctuation">:</span> white 
+        <span class="token punctuation">}</span>
+        <span class="token selector">section </span><span class="token punctuation">{</span>
+            <span class="token property">background</span><span class="token punctuation">:</span> black<span class="token punctuation">;</span>
+            <span class="token property">color</span><span class="token punctuation">:</span> white<span class="token punctuation">;</span>
+            <span class="token property">border-radius</span><span class="token punctuation">:</span> <span class="token number">1</span>em<span class="token punctuation">;</span>
+            <span class="token property">padding</span><span class="token punctuation">:</span> <span class="token number">1</span>em<span class="token punctuation">;</span>
+            <span class="token property">position</span><span class="token punctuation">:</span> absolute<span class="token punctuation">;</span>
+            <span class="token property">top</span><span class="token punctuation">:</span> <span class="token number">50%</span><span class="token punctuation">;</span>
+            <span class="token property">left</span><span class="token punctuation">:</span> <span class="token number">50%</span><span class="token punctuation">;</span>
+            <span class="token property">transform</span><span class="token punctuation">:</span> <span class="token function">translate</span><span class="token punctuation">(</span>-<span class="token number">50%</span>, -<span class="token number">50%</span><span class="token punctuation">)</span> 
+        <span class="token punctuation">}</span>
+    </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>style</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>section</span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h1</span><span class="token punctuation">></span></span>Nicely centered<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h1</span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">></span></span>This text block is vertically centered.
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">></span></span>Horizontally, too, if the window is wide enough.
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>section</span><span class="token punctuation">></span></span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<ul>
+<li>left 땡겨주는 것들 때문에 margin-right:-50% 줘야한다는 얘기는 별 차이를 모르겠어서 빼버림</li>
+<li>확인하고 싶으면 원문으로.</li>
+</ul>
+</div><script type="text/javascript" src="/js/share.js?v=0.0.0" async></script><a data-url="junthus.github.io/2018/03/centering-thing/" data-id="cjekyq8kz0000gw4a2k8h6ps9" class="article-share-link">공유하기</a><div class="tags"></div><div class="post-nav"><a href="/2018/01/hello-vue/" class="next">Vue.js</a></div></div></div></div><div class="pure-u-1-4 hidden_mid_and_down"><div id="sidebar"><div class="widget"><form action="//www.google.com/search" method="get" accept-charset="utf-8" target="_blank" class="search-form"><input type="text" name="q" maxlength="20" placeholder="Search"/><input type="hidden" name="sitesearch" value="junthus.github.io"/></form></div><div class="widget"><div class="widget-title"><i class="fa fa-folder-o"> 카테고리</i></div><ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/JavaScript/">JavaScript</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/JavaScript/ES6/">ES6</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/JavaScript/TypeScript/">TypeScript</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/JavaScript/Vue-js/">Vue.js</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/css/">css</a></li></ul></div><div class="widget"><div class="widget-title"><i class="fa fa-star-o"> 태그</i></div><div class="tagcloud"></div></div><div class="widget"><div class="widget-title"><i class="fa fa-file-o"> 최근</i></div><ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2018/03/centering-thing/">centering_thing</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/01/hello-vue/">Vue.js</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/11/hello-TypeScript/">Hello! TypeScript</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/11/destructuring/">destructuring</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/11/const/">const</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/11/let/">let</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/10/test/">test</a></li></ul></div></div></div><div class="pure-u-1 pure-u-md-3-4"><div id="footer">© <a href="/." rel="nofollow">.bak.</a> Powered by<a rel="nofollow" target="_blank" href="https://hexo.io"> Hexo.</a><a rel="nofollow" target="_blank" href="https://github.com/tufu9441/maupassant-hexo"> Theme</a> by<a rel="nofollow" target="_blank" href="https://github.com/pagecho"> Cho.</a></div></div></div><a id="rocket" href="#top" class="show"></a><script type="text/javascript" src="/js/totop.js?v=0.0.0" async></script><script type="text/javascript" src="//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.pack.js" async></script><script type="text/javascript" src="/js/fancybox.js?v=0.0.0" async></script><link rel="stylesheet" type="text/css" href="/css/jquery.fancybox.css?v=0.0.0"><script type="text/javascript" src="/js/codeblock-resizer.js?v=0.0.0"></script><script type="text/javascript" src="/js/smartresize.js?v=0.0.0"></script></div></body></html>
